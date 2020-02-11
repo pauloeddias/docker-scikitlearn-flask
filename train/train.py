@@ -15,4 +15,4 @@ model.fit(x,y)
 yhat = model.predict(x)
 
 import joblib
-joblib.dump(model,'model.joblib')
+joblib.dump(model,'../server/model.joblib')

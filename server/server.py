@@ -4,9 +4,9 @@ import joblib
 import numpy as np
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = False
 
-model = joblib.load('../train/model.joblib')
+model = joblib.load('model.joblib')
 
 
 @app.route('/', methods=['GET'])
@@ -17,4 +17,6 @@ def home():
     # y = y.tolist()
     y = y[0][0]
     return str(y)
-app.run()
+
+if __name__ == '__main__':
+      app.run(host='0.0.0.0', port=80)
